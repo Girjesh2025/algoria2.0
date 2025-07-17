@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Learning - Web Version</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .lesson-card {
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #4CAF50;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .output {
+            background: #1a202c;
+            color: #68d391;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            border-left: 4px solid #68d391;
+        }
+        .btn {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+        .terminal-steps {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 Python Learning - Web Version</h1>
+        
+        <div class="terminal-steps">
+            <h2>🔧 Terminal Access करने के तरीके:</h2>
+            
+            <div class="step">
+                <h3>📱 Method 1: Keyboard Shortcut</h3>
+                <div class="code-block">Ctrl + ` (backtick key)</div>
+                <p>यह सबसे तेज़ तरीका है!</p>
+            </div>
+            
+            <div class="step">
+                <h3>📱 Method 2: Menu से</h3>
+                <div class="code-block">Terminal → New Terminal</div>
+                <p>Top menu में Terminal option ढूंढें</p>
+            </div>
+            
+            <div class="step">
+                <h3>📱 Method 3: Command Palette</h3>
+                <div class="code-block">Ctrl + Shift + P → "Terminal" type करें</div>
+                <p>Command palette खुलेगा</p>
+            </div>
+        </div>
+
+        <div class="lesson-card">
+            <h2>📚 Day 1: Variables (Web Demo)</h2>
+            <p>यहाँ Python variables का example है:</p>
+            
+            <div class="code-block">
+# Variables बनाना<br>
+name = "राहुल"<br>
+age = 25<br>
+city = "दिल्ली"<br>
+is_student = True<br>
+<br>
+# Print करना<br>
+print(f"नाम: {name}")<br>
+print(f"उम्र: {age}")<br>
+print(f"शहर: {city}")<br>
+print(f"छात्र है: {is_student}")
+            </div>
+            
+            <div class="output">
+Output:<br>
+नाम: राहुल<br>
+उम्र: 25<br>
+शहर: दिल्ली<br>
+छात्र है: True
+            </div>
+            
+            <button class="btn" onclick="showVariableTypes()">Variable Types देखें</button>
+        </div>
+
+        <div class="lesson-card">
+            <h2>🎯 Terminal Commands (Copy-Paste करें):</h2>
+            
+            <div class="step">
+                <h3>Day 1 Run करने के लिए:</h3>
+                <div class="code-block" id="cmd1">python3 python_learning/basics/day1_variables.py</div>
+                <button class="btn" onclick="copyCommand('cmd1')">Copy करें</button>
+            </div>
+            
+            <div class="step">
+                <h3>Day 2 Run करने के लिए:</h3>
+                <div class="code-block" id="cmd2">python3 python_learning/basics/day2_operators.py</div>
+                <button class="btn" onclick="copyCommand('cmd2')">Copy करें</button>
+            </div>
+            
+            <div class="step">
+                <h3>Game खेलने के लिए:</h3>
+                <div class="code-block" id="cmd3">python3 python_learning/projects/number_guessing_game.py</div>
+                <button class="btn" onclick="copyCommand('cmd3')">Copy करें</button>
+            </div>
+        </div>
+
+        <div class="lesson-card">
+            <h2>🔍 Terminal ढूंढने के Tips:</h2>
+            <ul>
+                <li>Cursor window के <strong>bottom</strong> में देखें</li>
+                <li>अगर पूरी screen code से भरी है तो <strong>View menu</strong> check करें</li>
+                <li>कभी-कभी terminal <strong>tab</strong> में छुप जाता है</li>
+                <li>Right-click करके <strong>"Open Terminal"</strong> option देखें</li>
+            </ul>
+        </div>
+
+        <div class="lesson-card">
+            <h2>🚀 एक बार Terminal मिल जाए तो:</h2>
+            <ol>
+                <li>ऊपर दिए गए commands <strong>copy</strong> करें</li>
+                <li>Terminal में <strong>paste</strong> करें (Ctrl+V)</li>
+                <li><strong>Enter</strong> दबाएं</li>
+                <li>Python program चलेगा! 🎉</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function copyCommand(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Command copied! अब terminal में paste करें (Ctrl+V)');
+            });
+        }
+
+        function showVariableTypes() {
+            alert(`
+Variable Types:
+• name = String (text)
+• age = Integer (पूर्ण संख्या)
+• height = Float (दशमलव)
+• is_student = Boolean (True/False)
+
+Python में type() function से check कर सकते हैं!
+            `);
+        }
+
+        // Auto-scroll to important sections
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🐍 Python Learning Web Demo loaded!');
+        });
+    </script>
+</body>
+</html>
